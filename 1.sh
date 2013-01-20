@@ -1,7 +1,6 @@
 #!/bin/bash
 function list {
-	IFS='
-'
+	IFS=$'\n'
 	array=($(ls -1 *.txt ))
 	len=${#array[*]}
 	echo "Text files in this dir:"
@@ -10,7 +9,6 @@ function list {
 		let j=$i+1
 		echo "$j. ${array[$i]}"
 	done
-	IFS=$OIFS
 	echo
 	}
 while [ "$input" != "q" ]
